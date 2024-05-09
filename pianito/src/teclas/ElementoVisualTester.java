@@ -4,7 +4,7 @@ import javax.sound.midi.MidiMessage;
 import javax.sound.midi.Receiver;
 import java.awt.*;
 
-public class ElementoVisualTester implements Receiver {
+public class ElementoVisualTester{
     private Graphics graphics;
     private ElementoVisual elemento;
 
@@ -21,16 +21,6 @@ public class ElementoVisualTester implements Receiver {
     }
 
     public static void main(String[]  args) {
-        throw new UnsupportedOperationException("no programado");
-    }
-
-    @Override
-    public void send(MidiMessage message, long timeStamp) {
-        throw new UnsupportedOperationException("no programado");
-    }
-
-    @Override
-    public void close() {
         throw new UnsupportedOperationException("no programado");
     }
 }

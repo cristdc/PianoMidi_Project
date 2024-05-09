@@ -1,8 +1,10 @@
 package programa;
 
+import javax.sound.midi.MidiMessage;
+import javax.sound.midi.Receiver;
 import java.awt.*;
 
-public class ReproductorMidi {
+public class ReproductorMidi implements Receiver {
     private static final Color[] COLORES = null;
     private Piano piano;
 
@@ -14,5 +16,15 @@ public class ReproductorMidi {
     }
     public void conectar(Piano p) {
 
+    }
+
+    @Override
+    public void send(MidiMessage message, long timeStamp) {
+        throw new UnsupportedOperationException("no programado");
+    }
+
+    @Override
+    public void close() {
+        throw new UnsupportedOperationException("no programado");
     }
 }
