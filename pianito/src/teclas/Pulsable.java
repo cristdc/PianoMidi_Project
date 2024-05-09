@@ -10,6 +10,10 @@ public interface Pulsable extends ElementoVisual{
     public Color getColorPulsado();
     public Color getColorNoPulsado();
     public default Color getColor(){
-        throw new UnsupportedOperationException("sin programar");
+        Color pulsado = this.getColorPulsado();
+        if (!this.estaPulsada()){
+            pulsado = this.getColorNoPulsado();
+        }
+        return pulsado;
     }
 }
