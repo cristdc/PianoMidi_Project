@@ -2,7 +2,7 @@ package teclas;
 
 import java.awt.*;
 
-public interface Pulsable {
+public interface Pulsable extends ElementoVisual{
     public void pulsar();
     public void soltar();
     public boolean estaPulsada();
