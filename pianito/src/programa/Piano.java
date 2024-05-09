@@ -27,7 +27,12 @@ public abstract class Piano implements ElementoVisual {
     public abstract Tecla getTecla(int canal, int nota);
 
     @Override
-    public void dibujar() {
-        ElementoVisual.super.dibujar();
+    public void setPosicion(int x, int y) {
+        this.posicion = new Point(x, y);
+    }
+
+    @Override
+    public void setGraphics(Graphics g) {
+        this.graphics = g;
     }
 }
