@@ -2,17 +2,20 @@ package teclas;
 
 import java.awt.*;
 
-public abstract class Tecla {
+public abstract class Tecla implements Pulsable, Medible{
     protected Point posicion;
     private int nota;
     private boolean pulsada;
     private Color colorPulsada;
     private Graphics graphics;
-    private Tecla(int n){
-        throw new UnsupportedOperationException("sin programar");
+    Tecla(int n){
+        this.posicion = null;
+        this.nota = n;
+        this.pulsada = false;
+        this.colorPulsada = null;
     }
     public int getNumeroNota(){
-        throw new UnsupportedOperationException("sin programar");
+        return this.nota;
     }
     protected abstract int[] getVerticexX();
     protected abstract int[] getVerticexY();
