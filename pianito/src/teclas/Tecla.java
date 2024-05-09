@@ -8,7 +8,7 @@ public abstract class Tecla {
     private boolean pulsada;
     private Color colorPulsada;
     private Graphics graphics;
-    private Tecla(int n){
+    Tecla(int n){
         throw new UnsupportedOperationException("sin programar");
     }
     public int getNumeroNota(){
