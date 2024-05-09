@@ -1,10 +1,11 @@
 package programa;
 
+import teclas.ElementoVisual;
 import teclas.Tecla;
 
 import java.awt.*;
 
-public abstract class Piano{
+public abstract class Piano implements ElementoVisual {
     private int teclaInicial;
     private int teclaFinal;
     Point posicion;
@@ -24,4 +25,9 @@ public abstract class Piano{
     }
 
     public abstract Tecla getTecla(int canal, int nota);
+
+    @Override
+    public void dibujar() {
+        ElementoVisual.super.dibujar();
+    }
 }
