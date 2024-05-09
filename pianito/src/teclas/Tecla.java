@@ -20,4 +20,5 @@ public abstract class Tecla implements Pulsable, Medible{
     protected abstract int[] getVerticexX();
     protected abstract int[] getVerticexY();
 
+
 }
