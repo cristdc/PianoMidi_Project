@@ -1,26 +1,27 @@
 package programa;
 
+import teclas.Tecla;
+
 import java.awt.*;
 
-public class Piano {
+public abstract class Piano{
     private int teclaInicial;
     private int teclaFinal;
     Point posicion;
     Graphics graphics;
 
     public Piano(int ti, int tf){
-        throw new UnsupportedOperationException("Sin programar");
+        this.teclaInicial = ti;
+        this.teclaFinal = tf;
     }
 
     public int getTeclaInicial(){
-        throw new UnsupportedOperationException("Sin programar");
+        return this.teclaInicial;
     }
 
     public int getTeclaFinal(){
-        throw new UnsupportedOperationException("Sin programar");
+        return this.teclaFinal;
     }
 
-    public abstract Tecla getTecla(int canal, int nota){
-        throw new UnsupportedOperationException("Sin programar");
-    }
+    public abstract Tecla getTecla(int canal, int nota);
 }
