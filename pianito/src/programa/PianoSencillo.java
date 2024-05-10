@@ -11,7 +11,7 @@ public class PianoSencillo extends Piano {
     public PianoSencillo(int teclaInicial, int teclaFinal){
         super(teclaInicial,teclaFinal);
         this.teclas = new HashMap<>();
-        for (int i = 0; i<teclas.size(); i++){
+        for (int i = teclaInicial; i<teclaFinal; i++){
             teclas.put(i, teclas.get(i));
         }
 
