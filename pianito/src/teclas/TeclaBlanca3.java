@@ -9,8 +9,8 @@ public class TeclaBlanca3 extends TeclaBlanca{
     protected int[] getVerticexX() {
         return new int[]{
                 0,
-                ANCHURA -(TeclaNegra.ANCHURA/2),
-                ANCHURA -(TeclaNegra.ANCHURA/2),
+                ANCHURA -(TeclaNegra.ANCHURA),
+                ANCHURA -(TeclaNegra.ANCHURA),
                 ANCHURA,
                 ANCHURA,
                 0
