@@ -2,7 +2,7 @@ package teclas;
 
 import java.awt.*;
 
-public abstract class TeclaNegra extends Tecla{
+public class TeclaNegra extends Tecla{
     public final static int ANCHURA=15;
     public final static int ALTURA=50;
 
