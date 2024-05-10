@@ -25,11 +25,11 @@ public class PianoSencillo extends Piano {
     @Override
     public void dibujar() {
         int ancho = 0;
-        for (Tecla tecla:teclas.values()){
-            teclas.get(tecla).setGraphics(this.graphics);
-            teclas.get(tecla).setPosicion(posicion.x+ancho, posicion.y);
-            tecla.dibujar();
-            ancho+=tecla.getAnchura();
+        for (int i = getTeclaInicial(); i<getTeclaFinal(); i++){
+            teclas.get(i).setGraphics(this.graphics);
+            teclas.get(i).setPosicion(posicion.x+ancho, posicion.y);
+            teclas.get(i).dibujar();
+            ancho+=teclas.get(i).getAnchura();
         }
     }
 
