@@ -1,13 +1,11 @@
 package teclas;
 
-import bpc.daw.consola.CapaCanvas;
 import bpc.daw.consola.CapaFondo;
 import bpc.daw.consola.Consola;
 import bpc.daw.consola.FondoColorSolido;
 import programa.PianoSencillo;
 
 import java.awt.*;
-import java.io.IOException;
 
 public class ElementoVisualTester{
     private Graphics graphics;
