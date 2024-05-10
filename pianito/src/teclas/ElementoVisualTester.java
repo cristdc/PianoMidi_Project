@@ -18,6 +18,7 @@ public class ElementoVisualTester{
     }
 
     public ElementoVisualTester(ElementoVisual e) {
+        this.elemento=e;
         Consola c = new Consola();
         CapaFondo cf = c.getCapaFondo();
         cf.setFondo(new FondoColorSolido(Color.gray));
