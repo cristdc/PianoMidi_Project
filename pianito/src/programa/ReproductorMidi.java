@@ -1,8 +1,12 @@
 package programa;
 
-import javax.sound.midi.MidiMessage;
-import javax.sound.midi.Receiver;
+import teclas.Tecla;
+
+import javax.sound.midi.*;
 import java.awt.*;
+import java.io.File;
+import java.io.IOException;
+import java.io.InterruptedIOException;
 
 public class ReproductorMidi implements Receiver {
     private static final Color[] COLORES = {
@@ -14,22 +18,65 @@ public class ReproductorMidi implements Receiver {
     private Piano piano;
 
     public ReproductorMidi() {
-        throw new UnsupportedOperationException("no programado");
+        this.piano = null;
     }
     public void reproducir(String ruta) {
-        throw new UnsupportedOperationException("no programado");
+        try {
+            Sequence s = MidiSystem.getSequence(new File(ruta));
+            Sequencer sr = MidiSystem.getSequencer();
+            sr.open();
+            Transmitter tr = sr.getTransmitter();
+            Receiver r = tr.getReceiver();
+            tr.setReceiver(r);
+            sr.setSequence(s);
+            sr.start();
+            Thread.sleep(s.getMicrosecondLength());
+            tr.close();
+            sr.close();
+
+        }catch (InvalidMidiDataException e){
+            System.out.println(e.getMessage());
+        }catch (IOException e){
+            System.out.println(e.getMessage());
+        }catch (MidiUnavailableException e){
+            System.out.println(e.getMessage());
+        }catch (InterruptedException e){
+            System.out.println(e.getMessage());
+        }
+
     }
     public void conectar(Piano p) {
-
+        this.piano = p;
     }
 
     @Override
     public void send(MidiMessage message, long timeStamp) {
-        throw new UnsupportedOperationException("no programado");
+        if (message instanceof ShortMessage){
+            ShortMessage s = (ShortMessage)message;
+            int canal = s.getChannel();
+            if (canal != 9){
+                int notaMus = s.getCommand();
+                if (this.piano.getTeclaFinal() >= notaMus || this.piano.getTeclaInicial() <= notaMus){
+                    this.piano.getTecla(canal,notaMus);
+                    Tecla t = this.piano.getTecla(canal,notaMus);
+                    if (notaMus == ShortMessage.NOTE_ON){
+                        if (s.getData2() > 0){
+                            t.setColorPulsado(this.COLORES[canal]);
+                            t.pulsar();
+                        }else if (s.getData2() == 0){
+                            t.soltar();
+                        }
+                    } else if (notaMus == ShortMessage.NOTE_OFF) {
+                        t.soltar();
+                    }
+                    t.dibujar();
+                }
+            }
+        }
     }
 
     @Override
     public void close() {
-        throw new UnsupportedOperationException("no programado");
+
     }
 }
