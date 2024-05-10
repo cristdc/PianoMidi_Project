@@ -32,25 +32,17 @@ public class ElementoVisualTester{
         this.elemento.setGraphics(this.graphics);
         this.elemento.dibujar();
         if (this.elemento instanceof Pulsable pulsable) {
-            pulsable.setColorPulsado(Color.blue);
             try {
+                pulsable.setColorPulsado(Color.blue);
+                Thread.sleep(2000);
+                pulsable.pulsar();
+                pulsable.dibujar();
+                Thread.sleep(2000);
+                pulsable.soltar();
+                pulsable.dibujar();
                 Thread.sleep(2000);
             }catch (InterruptedException error) {
-                System.out.println(error);
-            }
-            pulsable.pulsar();
-            pulsable.dibujar();
-            try {
-                Thread.sleep(2000);
-            }catch (InterruptedException error) {
-                System.out.println(error);
-            }
-            pulsable.soltar();
-            pulsable.dibujar();
-            try {
-                Thread.sleep(2000);
-            }catch (InterruptedException error) {
-                System.out.println(error);
+                System.out.println(error.getMessage());
             }
         }
     }
