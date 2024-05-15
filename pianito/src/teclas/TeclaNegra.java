@@ -13,20 +13,20 @@ public class TeclaNegra extends Tecla{
     @Override
     protected int[] getVerticexX() {
         return new int[]{
-                0,
-                ANCHURA,
-                ANCHURA,
-                0
+                this.posicion.x,
+                this.posicion.x+ANCHURA,
+                this.posicion.x+ANCHURA,
+                this.posicion.x
         };
     }
 
     @Override
     protected int[] getVerticexY() {
         return new int[]{
-                0,
-                0,
-                ALTURA,
-                ALTURA
+                this.posicion.y,
+                this.posicion.y,
+                this.posicion.y+ALTURA,
+                this.posicion.y+ALTURA
         };
     }
 
