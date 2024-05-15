@@ -1,6 +1,7 @@
 package programa;
 
 import teclas.Tecla;
+import teclas.TeclaFactory;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,9 +13,9 @@ public class PianoSencillo extends Piano {
         super(teclaInicial,teclaFinal);
         this.teclas = new HashMap<>();
         for (int i = teclaInicial; i<teclaFinal; i++){
-            teclas.put(i, teclas.get(i));
+            Tecla tecla = TeclaFactory.crearTecla(i);
+            teclas.put(i, tecla);
         }
-
     }
 
     @Override
@@ -32,5 +33,4 @@ public class PianoSencillo extends Piano {
             ancho+=teclas.get(i).getAnchura();
         }
     }
-
 }
