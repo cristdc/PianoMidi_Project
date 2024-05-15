@@ -48,9 +48,9 @@ public abstract class Tecla implements Pulsable, Medible{
         }
 
         this.graphics.setColor(this.getColor());
-        this.graphics.fillPolygon(this.getVerticexX(),this.getVerticexY(),6);
+        this.graphics.fillPolygon(this.getVerticexX(),this.getVerticexY(),this.getVerticexX().length);
         this.graphics.setColor(Color.BLACK);
-        this.graphics.drawPolygon(this.getVerticexX(),this.getVerticexY(),6);
+        this.graphics.drawPolygon(this.getVerticexX(),this.getVerticexY(),this.getVerticexX().length);
 
     }
 
