@@ -8,24 +8,24 @@ public class TeclaBlanca3 extends TeclaBlanca{
     @Override
     protected int[] getVerticexX() {
         return new int[]{
-                0,
-                ANCHURA -(TeclaNegra.ANCHURA),
-                ANCHURA -(TeclaNegra.ANCHURA),
-                ANCHURA,
-                ANCHURA,
-                0
+                this.posicion.x,
+                this.posicion.x+ANCHURA -(TeclaNegra.ANCHURA),
+                this.posicion.x+ANCHURA -(TeclaNegra.ANCHURA),
+                this.posicion.x+ANCHURA,
+                this.posicion.x+ANCHURA,
+                this.posicion.x
         };
     }
 
     @Override
     protected int[] getVerticexY() {
         return new int[]{
-                TeclaNegra.ALTURA,
-                TeclaNegra.ALTURA,
-                0,
-                0,
-                ALTURA,
-                ALTURA
+                this.posicion.y+TeclaNegra.ALTURA,
+                this.posicion.y+TeclaNegra.ALTURA,
+                this.posicion.y,
+                this.posicion.y,
+                this.posicion.y+ALTURA,
+                this.posicion.y+ALTURA
         };
     }
 }
