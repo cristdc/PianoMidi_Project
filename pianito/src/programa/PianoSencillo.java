@@ -1,7 +1,6 @@
 package programa;
 
-import teclas.Tecla;
-import teclas.TeclaFactory;
+import teclas.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,7 +27,22 @@ public class PianoSencillo extends Piano {
         int ancho = 0;
         for (int i = getTeclaInicial(); i<getTeclaFinal(); i++){
             teclas.get(i).setGraphics(this.graphics);
-            teclas.get(i).setPosicion(posicion.x+ancho, posicion.y);
+
+            if(teclas.get(i) instanceof TeclaBlanca1){
+                teclas.get(i).setPosicion(posicion.x+ancho, posicion.y);
+
+            }else if (teclas.get(i) instanceof TeclaBlanca2) {
+                teclas.get(i).setPosicion(posicion.x+ancho, posicion.y);
+
+            }else if(teclas.get(i) instanceof TeclaBlanca3){
+                teclas.get(i).setPosicion(posicion.x+ancho, posicion.y);
+
+            }else if(teclas.get(i) instanceof TeclaNegra){
+                teclas.get(i).setPosicion(posicion.x+ancho, posicion.y);
+            }
+
+
+            //teclas.get(i).setPosicion(posicion.x+ancho, posicion.y);
             teclas.get(i).dibujar();
             ancho+=teclas.get(i).getAnchura();
         }

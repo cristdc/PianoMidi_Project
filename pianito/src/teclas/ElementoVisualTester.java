@@ -53,7 +53,7 @@ public class ElementoVisualTester{
     }
 
     public static void main(String[]  args) {
-        ElementoVisualTester evt = new ElementoVisualTester(new TeclaBlanca1(5));
+        ElementoVisualTester evt = new ElementoVisualTester(new PianoSencillo(1,8));
         evt.hacerPrueba();
     }
 }
