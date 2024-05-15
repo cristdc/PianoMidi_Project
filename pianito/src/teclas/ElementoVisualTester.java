@@ -43,6 +43,12 @@ public class ElementoVisualTester{
             }catch (InterruptedException error) {
                 System.out.println(error.getMessage());
             }
+        }else{
+            try {
+                Thread.sleep(6000);
+            }catch (InterruptedException error){
+                System.out.println(error.getMessage());
+            }
         }
     }
 
