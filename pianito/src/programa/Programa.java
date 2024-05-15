@@ -1,5 +1,6 @@
 package programa;
 
+
 import bpc.daw.consola.*;
 
 public class Programa {
@@ -13,9 +14,11 @@ public class Programa {
         String ruta = t.leerCadenaCaracteres();
         PianoSencillo p = new PianoSencillo(24,108);
         p.setGraphics(c.getCapaCanvas().getGraphics());
-        p.setPosicion(120,90);
+        p.setPosicion(50,50);
 
+        ReproductorMidi rM = new ReproductorMidi();
+        rM.conectar(p);
+        rM.reproducir(ruta);
 
-        t.leerCaracter();
     }
 }
