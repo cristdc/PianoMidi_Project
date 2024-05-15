@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="ConsolaDAW">
     <CLASSES>
-      <root url="jar://$USER_HOME$/OneDrive/Documentos/CLASES/programación/ConsolaDAW.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../Temario/librerías tema 2/ConsolaDAW.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
