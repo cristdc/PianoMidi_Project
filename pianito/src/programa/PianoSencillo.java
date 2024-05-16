@@ -28,23 +28,23 @@ public class PianoSencillo extends Piano {
         for (int i = getTeclaInicial(); i<getTeclaFinal(); i++){
             teclas.get(i).setGraphics(this.graphics);
 
+            teclas.get(i).setPosicion(posicion.x+ancho, posicion.y);
+            teclas.get(i).dibujar();
             if(teclas.get(i) instanceof TeclaBlanca1){
-                teclas.get(i).setPosicion(posicion.x+ancho, posicion.y);
-
-            }else if (teclas.get(i) instanceof TeclaBlanca2) {
-                teclas.get(i).setPosicion(posicion.x+ancho, posicion.y);
-
-            }else if(teclas.get(i) instanceof TeclaBlanca3){
-                teclas.get(i).setPosicion(posicion.x+ancho, posicion.y);
-
-            }else if(teclas.get(i) instanceof TeclaNegra){
-                teclas.get(i).setPosicion(posicion.x+ancho, posicion.y);
+                ancho+=teclas.get(i).getAnchura()-TeclaNegra.ANCHURA/2;
             }
 
+            if(teclas.get(i) instanceof TeclaBlanca2){
+                ancho+=teclas.get(i).getAnchura()-TeclaNegra.ANCHURA/2;
+            }
 
-            //teclas.get(i).setPosicion(posicion.x+ancho, posicion.y);
-            teclas.get(i).dibujar();
-            ancho+=teclas.get(i).getAnchura();
+            if(teclas.get(i) instanceof TeclaBlanca3){
+                ancho+=teclas.get(i).getAnchura();
+            }
+
+            if(teclas.get(i) instanceof TeclaNegra){
+                ancho+=teclas.get(i).getAnchura()/2;
+            }
         }
     }
 }

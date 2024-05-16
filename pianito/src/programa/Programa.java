@@ -14,7 +14,7 @@ public class Programa {
         String ruta = t.leerCadenaCaracteres();
         PianoSencillo p = new PianoSencillo(24,108);
         p.setGraphics(c.getCapaCanvas().getGraphics());
-        p.setPosicion(100,90);
+        p.setPosicion(120,90);
         p.dibujar();
 
         ReproductorMidi rM = new ReproductorMidi();

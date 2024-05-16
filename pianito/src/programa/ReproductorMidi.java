@@ -34,13 +34,7 @@ public class ReproductorMidi implements Receiver {
             tr.close();
             sr.close();
 
-        }catch (InvalidMidiDataException e){
-            System.out.println(e.getMessage());
-        }catch (IOException e){
-            System.out.println(e.getMessage());
-        }catch (MidiUnavailableException e){
-            System.out.println(e.getMessage());
-        }catch (InterruptedException e){
+        }catch (InvalidMidiDataException | InterruptedException | MidiUnavailableException | IOException e){
             System.out.println(e.getMessage());
         }
 
@@ -61,7 +55,7 @@ public class ReproductorMidi implements Receiver {
                     Tecla t = this.piano.getTecla(canal,notaMus);
                     if (notaMus == ShortMessage.NOTE_ON){
                         if (s.getData2() > 0){
-                            t.setColorPulsado(this.COLORES[canal]);
+                            t.setColorPulsado(COLORES[canal]);
                             t.pulsar();
                         }else if (s.getData2() == 0){
                             t.soltar();
