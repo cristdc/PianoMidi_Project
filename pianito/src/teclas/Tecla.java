@@ -46,11 +46,8 @@ public abstract class Tecla implements Pulsable, Medible{
             throw new IllegalStateException("Hay que llamar a setPosicion y " +
                     "setGraphics antes de llamar al método dibujar");
         }
-        if (!this.estaPulsada()) {
-            this.graphics.setColor(this.getColor());
-        }else {
-            this.graphics.setColor(this.colorPulsada);
-        }
+        this.graphics.setColor(this.getColor());
+
         this.graphics.fillPolygon(this.getVerticexX(),this.getVerticexY(),this.getVerticexX().length);
         this.graphics.setColor(Color.BLACK);
         this.graphics.drawPolygon(this.getVerticexX(),this.getVerticexY(),this.getVerticexX().length);

@@ -44,23 +44,24 @@ public class ReproductorMidi implements Receiver {
     }
 
     @Override
-    public void send(MidiMessage message, long timeStamp) {
+   public void send(MidiMessage message, long timeStamp) {
         if (message instanceof ShortMessage){
             ShortMessage s = (ShortMessage)message;
             int canal = s.getChannel();
             if (canal != 9){
-                int notaMus = s.getCommand();
+                int notaMus = s.getData1();
                 if (this.piano.getTeclaFinal() >= notaMus || this.piano.getTeclaInicial() <= notaMus){
-                    this.piano.getTecla(canal,notaMus);
                     Tecla t = this.piano.getTecla(canal,notaMus);
-                    if (notaMus == ShortMessage.NOTE_ON){
+                    int comando = s.getCommand();
+
+                    if (comando == ShortMessage.NOTE_ON){
                         if (s.getData2() > 0){
-                            t.setColorPulsado(COLORES[canal]);
+                            t.setColorPulsado(ReproductorMidi.COLORES[canal]);
                             t.pulsar();
                         }else if (s.getData2() == 0){
                             t.soltar();
                         }
-                    } else if (notaMus == ShortMessage.NOTE_OFF) {
+                    } else if (comando == ShortMessage.NOTE_OFF) {
                         t.soltar();
                     }
                     t.dibujar();
