@@ -3,8 +3,8 @@ package teclas;
 import java.awt.*;
 
 public abstract class TeclaBlanca extends Tecla{
-    public final static int ANCHURA=25;
-    public final static int ALTURA=100;
+    public final static int ANCHURA=12;
+    public final static int ALTURA=50;
 
     TeclaBlanca(int n){
         super(n);
