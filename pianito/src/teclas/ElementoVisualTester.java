@@ -3,6 +3,7 @@ package teclas;
 import bpc.daw.consola.CapaFondo;
 import bpc.daw.consola.Consola;
 import bpc.daw.consola.FondoColorSolido;
+import programa.MultiPiano;
 import programa.PianoSencillo;
 
 import java.awt.*;
