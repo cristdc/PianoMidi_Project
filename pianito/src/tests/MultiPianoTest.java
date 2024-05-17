@@ -1,9 +1,6 @@
-package programa;
+package tests;
 
 import org.junit.Test;
-import teclas.ElementoVisualTester;
-
-import static org.junit.Assert.*;
 
 public class MultiPianoTest {
     @Test
