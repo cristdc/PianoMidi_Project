@@ -51,7 +51,7 @@ public class PianoSencillo extends Piano implements Medible{
     @Override
     public int getAnchura() {
         int ancho = 0;
-        for (int i = 1; i <= this.teclas.size(); i++){
+        for (int i = 0 ; i < this.teclas.size(); i++){
             if (this.teclas.get(i) instanceof TeclaBlanca){
                 ancho += this.teclas.get(i).getAnchura();
             }
