@@ -12,13 +12,14 @@ public class Programa {
         ct.print("Dime la ruta del archivo: ");
         Teclado t = c.getTeclado();
         String ruta = t.leerCadenaCaracteres();
-        PianoSencillo p = new PianoSencillo(24,108);
-        p.setGraphics(c.getCapaCanvas().getGraphics());
-        p.setPosicion(120,90);
-        p.dibujar();
+        //PianoSencillo p = new PianoSencillo(24,108);
+        MultiPiano mp = new MultiPiano(24,108);
+        mp.setGraphics(c.getCapaCanvas().getGraphics());
+        mp.setPosicion(120,90);
+        mp.dibujar();
 
         ReproductorMidi rM = new ReproductorMidi();
-        rM.conectar(p);
+        rM.conectar(mp);
         rM.reproducir(ruta);
 
     }
