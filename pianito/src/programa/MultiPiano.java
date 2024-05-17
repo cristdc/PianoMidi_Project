@@ -2,6 +2,7 @@ package programa;
 
 import teclas.Tecla;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MultiPiano extends Piano{
@@ -9,24 +10,10 @@ public class MultiPiano extends Piano{
 
     public MultiPiano(int ti, int tf) {
         super(ti, tf);
-        this.pianos.addAll(List.of(
-                new PianoSencillo(ti, tf),
-                new PianoSencillo(ti, tf),
-                new PianoSencillo(ti, tf),
-                new PianoSencillo(ti, tf),
-                new PianoSencillo(ti, tf),
-                new PianoSencillo(ti, tf),
-                new PianoSencillo(ti, tf),
-                new PianoSencillo(ti, tf),
-                new PianoSencillo(ti, tf),
-                new PianoSencillo(ti, tf),
-                new PianoSencillo(ti, tf),
-                new PianoSencillo(ti, tf),
-                new PianoSencillo(ti, tf),
-                new PianoSencillo(ti, tf),
-                new PianoSencillo(ti, tf),
-                new PianoSencillo(ti, tf)
-        ));
+        this.pianos = new ArrayList<>();
+        for(int i = 0; i<16; i++){
+            this.pianos.add(new PianoSencillo(ti,tf));
+        }
     }
 
     @Override
@@ -36,6 +23,8 @@ public class MultiPiano extends Piano{
 
     @Override
     public void dibujar() {
-        throw new UnsupportedOperationException();
+        for(int i =0; i<this.pianos.size(); i++){
+
+        }
     }
 }
