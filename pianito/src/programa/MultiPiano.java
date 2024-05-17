@@ -29,9 +29,10 @@ public class MultiPiano extends Piano{
         ));
     }
 
-    @Override
     public Tecla getTecla(int canal, int nota) {
-        throw new UnsupportedOperationException();
+        return this.pianos.get(canal).getTecla(
+                canal, nota
+        );
     }
 
     @Override
