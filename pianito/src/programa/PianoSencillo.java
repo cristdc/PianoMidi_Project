@@ -5,7 +5,7 @@ import teclas.*;
 import java.util.HashMap;
 import java.util.Map;
 
-public class PianoSencillo extends Piano {
+public class PianoSencillo extends Piano implements Medible{
     private Map<Integer, Tecla> teclas;
 
     public PianoSencillo(int teclaInicial, int teclaFinal){
@@ -46,5 +46,21 @@ public class PianoSencillo extends Piano {
                 ancho+=teclas.get(i).getAnchura()/2;
             }
         }
+    }
+
+    @Override
+    public int getAnchura() {
+        int ancho = 0;
+        for (int i = 1; i <= this.teclas.size(); i++){
+            if (this.teclas.get(i) instanceof TeclaBlanca){
+                ancho += this.teclas.get(i).getAnchura();
+            }
+        }
+        return ancho;
+    }
+
+    @Override
+    public int getAltura() {
+        return TeclaBlanca.ALTURA;
     }
 }
