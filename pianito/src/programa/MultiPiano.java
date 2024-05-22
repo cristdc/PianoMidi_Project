@@ -32,15 +32,16 @@ public class MultiPiano extends Piano {
             this.pianos.get(i).setPosicion(x, y);
             this.pianos.get(i).setGraphics(this.graphics);
             this.pianos.get(i).dibujar();
-            y += (int) (TeclaBlanca.ALTURA*1.2);
+            y += (int) (TeclaBlanca.ALTURA*1.5);
         }
         x += new PianoSencillo(super.getTeclaInicial(),super.getTeclaFinal()).getAnchura();
-
+        y= (int) (this.posicion.y);
+        x*=1.2;
         for(int i = 8; i<this.pianos.size(); i++){
             this.pianos.get(i).setPosicion(x, y);
             this.pianos.get(i).setGraphics(this.graphics);
             this.pianos.get(i).dibujar();
-            y += (int) (TeclaBlanca.ALTURA*1.2);
+            y += (int) (TeclaBlanca.ALTURA*1.5);
         }
 
     }
