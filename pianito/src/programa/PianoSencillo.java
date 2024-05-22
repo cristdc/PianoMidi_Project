@@ -11,7 +11,7 @@ public class PianoSencillo extends Piano implements Medible{
     public PianoSencillo(int teclaInicial, int teclaFinal){
         super(teclaInicial,teclaFinal);
         this.teclas = new HashMap<>();
-        for (int i = teclaInicial; i<teclaFinal; i++){
+        for (int i = teclaInicial; i<=teclaFinal; i++){
             Tecla tecla = TeclaFactory.crearTecla(i);
             teclas.put(i, tecla);
         }
@@ -25,7 +25,7 @@ public class PianoSencillo extends Piano implements Medible{
     @Override
     public void dibujar() {
         int ancho = 0;
-        for (int i = getTeclaInicial(); i<getTeclaFinal(); i++){
+        for (int i = getTeclaInicial(); i<=getTeclaFinal(); i++){
             teclas.get(i).setGraphics(this.graphics);
 
             teclas.get(i).setPosicion(posicion.x+ancho, posicion.y);
@@ -51,7 +51,7 @@ public class PianoSencillo extends Piano implements Medible{
     @Override
     public int getAnchura() {
         int ancho = 0;
-        for (int i = this.getTeclaInicial()-1 ; i <= this.getTeclaFinal(); i++){
+        for (int i = this.getTeclaInicial() ; i <= this.getTeclaFinal(); i++){
             if (this.teclas.get(i) instanceof TeclaBlanca){
                 ancho += this.teclas.get(i).getAnchura();
             }
