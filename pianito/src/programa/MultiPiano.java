@@ -12,6 +12,7 @@ public class MultiPiano extends Piano{
     public MultiPiano(int ti, int tf) {
         super(ti, tf);
         this.pianos = new ArrayList<>();
+
         for(int i = 0; i<16; i++){
             this.pianos.add(new PianoSencillo(ti,tf));
         }
@@ -30,8 +31,11 @@ public class MultiPiano extends Piano{
         for(int i =0; i<this.pianos.size()/2; i++){
             this.pianos.get(i).setPosicion(x, y);
             y += (int) (TeclaBlanca.ALTURA*1.2);
+
+            if(i==this.pianos.size()/2){
+                x+= this.pianos.get(i).getAnchura();
+            }
         }
-        x += new PianoSencillo(super.getTeclaInicial(),super.getTeclaFinal()).getAnchura();
 
         for(int i = 8; i<this.pianos.size(); i++){
             this.pianos.get(i).setPosicion(x, y);
