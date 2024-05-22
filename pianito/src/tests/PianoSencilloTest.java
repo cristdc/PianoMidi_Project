@@ -21,7 +21,7 @@ public class PianoSencilloTest {
     @Test
     public void Test2(){
         PianoSencillo p = new PianoSencillo(36, 48);
-        assertEquals(200, p.getAnchura());
-        assertEquals(100, p.getAltura());
+        assertEquals(96, p.getAnchura());
+        assertEquals(50, p.getAltura());
     }
 }
